@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Streamlit
+.streamlit/
+
+# Secrets
+.env
+config.py
+
+# Data
+data/filings/*
+!data/filings/.gitkeep
