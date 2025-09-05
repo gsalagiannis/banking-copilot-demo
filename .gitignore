@@ -10,6 +10,6 @@ __pycache__/
 .env
 config.py
 
-# Data
-data/filings/*
-!data/filings/.gitkeep
+# Allow PDFs
+!data/filings/*.pdf
+
