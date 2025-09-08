@@ -194,12 +194,34 @@ with tabs[2]:
         label, score = classify_sentiment(nlp, text)
         st.write(f"**Label:** {label} — **Confidence:** {score:.3f}")
 
-# ---------- TAB 4: NL→SQL (stub) ----------
+
+# ---------- TAB 4: NL→SQL (Level B) ----------
 with tabs[3]:
-    st.header("NL→SQL (coming soon)")
-    q = st.text_input("Ask a toy question", value="List EUR transactions above 10,000 grouped by counterparty.")
-    if st.button("Show example"):
-        sql = "SELECT counterparty, SUM(amount) AS total FROM transactions WHERE ccy = 'EUR' AND amount > 10000 GROUP BY counterparty;"
-        st.code(sql, language="sql")
-        st.dataframe(pd.DataFrame({"counterparty": ["AlphaBank", "Contoso"], "total": [52000, 18000]}))
-        st.caption("Static example for MVP; real NL→SQL in Level B.")
+    st.header("NL→SQL (natural language → safe SQL on SQLite)")
+
+    st.caption("DB: data/transactions.db  •  Table: transactions(id, ts, amount, ccy, counterparty, book)")
+    user_q = st.text_input("Ask a database question", value="Show the total USD amount per counterparty.")
+
+    col = st.columns(3)
+    with col[0]:
+        model_name = st.selectbox("Model", ["gpt-4o-mini", "gpt-4o"], index=0, key="nl2sql_model")
+
+    with col[1]:
+        run_btn = st.button("Generate & Run SQL")
+    with col[2]:
+        st.caption("Guardrails: SELECT-only, LIMIT added, DDL/DML blocked.")
+
+    if run_btn:
+        from Nl2sql.Generate_sql import nl2sql_run
+        safe_query = apply_privacy("NL Query", user_q)
+        sql, df, err = nl2sql_run(safe_query, model=model_name)
+
+        if sql:
+            st.subheader("Generated SQL")
+            st.code(sql, language="sql")
+        if err:
+            st.error(err)
+        elif df is not None:
+            st.subheader("Results")
+            st.dataframe(df)
+
