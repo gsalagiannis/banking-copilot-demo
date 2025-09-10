@@ -101,16 +101,16 @@ banking-copilot-mvp/
 ## 📸 Screenshots
 
 ### Prompt Playground
-![Prompt Playground](Assets/prompt_playground.png)
+![Prompt Playground](Assets/prompt_playground.PNG)
 
 ### Sentiment Analysis
-![Sentiment Analysis](Assets/sentiment_analysis.png)
+![Sentiment Analysis](Assets/sentiment_analysis.PNG)
 
 ### RAG Q&A
-![RAG Answer](Assets/RAG.png)
+![RAG Answer](Assets/RAG.PNG)
 
 ### NL→SQL
-![NL→SQL](Assets/NL2SQL.png)
+![NL→SQL](Assets/NL2SQL.PNG)
 
 
 ## ⚖️ Disclaimer
