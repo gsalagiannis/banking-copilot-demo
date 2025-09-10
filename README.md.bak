@@ -98,21 +98,6 @@ banking-copilot-mvp/
 ✅ Sentiment analysis on financial text (FinBERT + zero-shot)  
 ✅ RAG-style search over filings (cosine similarity, top-k)
 
-## 📸 Screenshots
-
-### Prompt Playground
-![Prompt Playground](Assets/prompt_playground.png)
-
-### Sentiment Analysis
-![Sentiment Analysis](Assets/sentiment_analysis.png)
-
-### RAG Q&A
-![RAG Answer](Assets/RAG.png)
-
-### NL→SQL
-![NL→SQL](Assets/NL2SQL.png)
-
-
 ## ⚖️ Disclaimer
 
 This is a demo project. **Not for production or financial decision-making.**  
