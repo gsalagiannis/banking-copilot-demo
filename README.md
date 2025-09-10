@@ -103,11 +103,11 @@ banking-copilot-mvp/
 ### Prompt Playground
 ![Prompt Playground](Assets/prompt_playground.PNG)
 
-### Sentiment Analysis
-![Sentiment Analysis](Assets/sentiment_analysis.PNG)
-
 ### RAG Q&A
 ![RAG Answer](Assets/RAG.PNG)
+
+### Sentiment Analysis
+![Sentiment Analysis](Assets/sentiment_analysis.PNG)
 
 ### NL→SQL
 ![NL→SQL](Assets/NL2SQL.PNG)
